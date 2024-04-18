@@ -19,7 +19,7 @@ pub struct NewRustacean {
 }
 
 #[derive(Queryable)]
-pub struct Create {
+pub struct Crate {
   pub id: i32,
   pub rustacean_id: i32,
   pub code: String,
@@ -29,9 +29,9 @@ pub struct Create {
   pub created_at: NaiveDateTime,
 }
 
-#[derive(Queryable)]
+#[derive(Insertable)]
 #[diesel(table_name=crates)]
-pub struct NewCreate {
+pub struct NewCrate {
   pub rustacean_id: i32,
   pub code: String,
   pub name: String,
