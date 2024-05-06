@@ -1,0 +1,2 @@
+[default.databases.rust_web_api_db]
+url = "postgres://postgres:123@localhost/rust_web_api_db"

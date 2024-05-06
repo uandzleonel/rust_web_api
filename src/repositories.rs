@@ -14,7 +14,7 @@ impl RustaceanRepository {
   pub async fn find_many(conn: &mut AsyncPgConnection, limit: i64) -> QueryResult<Vec<Rustacean>> {
     rustaceans::table.limit(limit).get_results(conn).await
   }
-
+  
   pub async fn create(conn: &mut AsyncPgConnection, new_rustacean: NewRustacean) -> QueryResult<Rustacean> {
     diesel::insert_into(rustaceans::table)
       .values(new_rustacean)
